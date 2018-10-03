@@ -1,0 +1,59 @@
+{
+  "config": {
+    "pluginDir": ".\\plugins"
+  },
+  "executionProfile": {
+    "artifacts": [
+      {
+        "type": "registryArtifact",
+        "rootKey": "HKEY_CURRENT_USER",
+        "key": "Test",
+        "create": true,
+        "values": [
+          {
+            "type": "REG_SZ",
+            "name": "testname1",
+            "value": "testval1"
+          },
+          {
+            "type": "REG_SZ",
+            "name": "testname2",
+            "value": "testval2"
+          }
+        ]
+      },
+      {
+        "type": "registryArtifact",
+        "rootKey": "HKEY_CURRENT_USER",
+        "key": "Test2",
+        "create": true
+      },
+      {
+        "type": "registryArtifact",
+        "rootKey": "HKEY_CURRENT_USER",
+        "key": "Test2\\subkey",
+        "create": true,
+        "values": [
+          {
+            "type": "REG_DWORD",
+            "name": "testname1",
+            "value": 1024
+          }
+        ]
+      },
+      {
+        "type": "registryArtifact",
+        "rootKey": "HKEY_CURRENT_USER",
+        "key": "Test2\\subkey\\subkey2",
+        "create": true,
+        "values": [
+          {
+            "type": "REG_DWORD",
+            "name": "testname1",
+            "value": 512
+          }
+        ]
+      }
+    ]
+  }
+}
