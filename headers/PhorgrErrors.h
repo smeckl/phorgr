@@ -2,5 +2,10 @@
 
 enum PhorgrError
 {
-	ErrorUnknown = 0
+	Success = 0,
+	ErrorUnknown,
+	NetworkSetup,
+	NetworkReceive,
+	NetworkSend,
+	NetworkDNS
 };

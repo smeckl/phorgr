@@ -13,8 +13,8 @@ public:
 	IArtifact(const std::wstring &jsonData) {} // Build artifact class from serialized JSON data
 	virtual ~IArtifact() {}
 
-	virtual PhorgrError Phorge() = 0; // Plants artifact on the system
-	virtual PhorgrError Erase() = 0;  // Removes artifact from the system (Undo)
+	virtual PhorgrError Phorge(const std::wstring &strKillEvent) = 0; // Plants artifact on the system
+	virtual PhorgrError Erase(const std::wstring &strKillEvent) = 0;  // Removes artifact from the system (Undo)
 
 	virtual const std::wstring &getType() = 0;
 };

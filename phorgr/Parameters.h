@@ -1,10 +1,17 @@
 #pragma once
 
 #include <iostream>
+#include "PhorgrErrors.h"
 
 class Parameters
 {
 public:
+	static const std::wstring CONFIG;
+	static const std::wstring PLUGIN_DIR;
+	static const std::wstring PLUGIN_DLL_WILDCARD;
+	static const std::wstring RUN_SECONDS;
+	static const std::wstring INSTANCE_MUTEX;
+
 	static Parameters& getInstance()
 	{
 		static Parameters    instance;
@@ -19,6 +26,8 @@ private:
 public:
 	Parameters(Parameters const&) = delete;
 	void operator=(Parameters const&) = delete;
+
+	PhorgrError InitializeFromJSON(const std::wstring &jsonString);
 
 	const std::wstring &GetJSONFile() const;
 	void SetJSONFile(const std::wstring &jsonFile);

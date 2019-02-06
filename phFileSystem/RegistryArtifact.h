@@ -18,7 +18,7 @@ class RegistryArtifact : public IArtifact
 public:
 	static std::shared_ptr<IArtifact> createArtifact(const std::wstring &jsonData);
 
-	static const std::wstring REGISTRY_ARTIFACT;
+	static const std::wstring REGISTRY;
 	static const std::wstring KEY;
 	static const std::wstring VALUES;
 	static const std::wstring NAME;
@@ -32,9 +32,9 @@ public:
 
 	// Methods required for IArtifact interface
 	RegistryArtifact(const std::wstring &jsonData);
-	PhorgrError Phorge(); // Plants artifact on the system
-	PhorgrError Erase();  // Removes artifact from the system (Undo)
-	const std::wstring &getType() { return REGISTRY_ARTIFACT; }
+	PhorgrError Phorge(const std::wstring &strKillEvent); // Plants artifact on the system
+	PhorgrError Erase(const std::wstring &strKillEvent);  // Removes artifact from the system (Undo)
+	const std::wstring &getType() { return REGISTRY; }
 
 	// Accessors
 	void Key(std::wstring strKey);

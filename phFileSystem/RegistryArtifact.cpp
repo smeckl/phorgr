@@ -5,7 +5,7 @@
 
 using namespace web::json;
 
-const std::wstring RegistryArtifact::REGISTRY_ARTIFACT = L"registryArtifact";
+const std::wstring RegistryArtifact::REGISTRY = L"registry";
 const std::wstring RegistryArtifact::KEY = L"key";
 const std::wstring RegistryArtifact::VALUES = L"values";
 const std::wstring RegistryArtifact::NAME = L"name";
@@ -133,7 +133,7 @@ RegistryArtifact::~RegistryArtifact()
 {
 }
 
-PhorgrError RegistryArtifact::Phorge()
+PhorgrError RegistryArtifact::Phorge(const std::wstring &strKillEvent)
 {
 	PhorgrError res(PhorgrError::ErrorUnknown);
 
@@ -171,7 +171,7 @@ PhorgrError RegistryArtifact::Phorge()
 	return res;
 }
 
-PhorgrError RegistryArtifact::Erase()
+PhorgrError RegistryArtifact::Erase(const std::wstring &strKillEvent)
 {
 	PhorgrError res(PhorgrError::ErrorUnknown);
 
